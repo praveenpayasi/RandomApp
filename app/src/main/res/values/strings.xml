@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RandomApp</string>
+    <string name="edittext_hint">Enter a number between 1 and 5000</string>
+</resources>
