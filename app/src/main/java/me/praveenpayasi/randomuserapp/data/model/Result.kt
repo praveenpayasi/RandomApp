@@ -1,5 +1,9 @@
 package me.praveenpayasi.randomuserapp.data.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Result(
     val cell: String,
     val dob: Dob,
@@ -13,4 +17,4 @@ data class Result(
     val phone: String,
     val picture: Picture,
     val registered: Registered
-)
+) : Parcelable
