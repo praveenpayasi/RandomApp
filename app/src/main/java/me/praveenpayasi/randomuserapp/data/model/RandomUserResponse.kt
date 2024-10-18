@@ -5,6 +5,6 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class RandomUserResponse(
-    val info: Info?,
+    val info: Info,
     val results: List<Result>
 ) : Parcelable
