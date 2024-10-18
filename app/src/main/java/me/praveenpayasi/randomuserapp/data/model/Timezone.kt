@@ -5,6 +5,6 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Timezone(
-    val description: String,
-    val offset: String
+    val description: String?,
+    val offset: String?
 ) : Parcelable

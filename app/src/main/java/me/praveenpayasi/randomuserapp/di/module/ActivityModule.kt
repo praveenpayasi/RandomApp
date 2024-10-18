@@ -8,7 +8,7 @@ import dagger.Provides
 import me.praveenpayasi.randomuserapp.data.repository.RandomUserRepository
 import me.praveenpayasi.randomuserapp.di.ActivityContext
 import me.praveenpayasi.randomuserapp.ui.base.ViewModelProviderFactory
-import me.praveenpayasi.randomuserapp.ui.random.RandomUserAdapter
+import me.praveenpayasi.randomuserapp.ui.random.RandomUserPaginationAdapter
 import me.praveenpayasi.randomuserapp.ui.random.RandomUserViewModel
 
 @Module
@@ -29,6 +29,6 @@ class ActivityModule(private val activity: AppCompatActivity) {
     }
 
     @Provides
-    fun provideRandomUserAdapter() = RandomUserAdapter(ArrayList())
+    fun provideRandomUserPaginationAdapter() = RandomUserPaginationAdapter()
 
 }

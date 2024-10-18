@@ -29,25 +29,3 @@ class RandomUserRepository @Inject constructor(private val networkService: Netwo
         ).flow
     }
 }
-
-//@Singleton
-//class RandomUserRepository @Inject constructor(private val networkService: NetworkService) {
-//
-//    fun getTopHeadlines(country: Int): Flow<PagingData<Result>> {
-//        val gson = GsonBuilder()
-//            .registerTypeAdapter(String::class.java, PostcodeDeserializer())
-//            .create()
-//
-//        return flow {
-//            val response = networkService.getRandomUser(country)
-//            val jsonResponse = gson.toJson(response)
-//            val deserializedResponse = gson.fromJson(jsonResponse, RandomUserResponse::class.java)
-//            emit(deserializedResponse.results)
-//        }
-//    }
-//
-//}
-//
-//return Pager(config = PagingConfig(pageSize = PAGE_SIZE),
-//pagingSourceFactory = { RandomUserPagingSource(networkService)
-//}).flow

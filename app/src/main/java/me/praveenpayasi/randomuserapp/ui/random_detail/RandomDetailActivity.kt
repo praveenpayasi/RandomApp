@@ -27,17 +27,17 @@ class RandomDetailActivity : AppCompatActivity() {
         //val user: Result? = intent.getParcelableExtra("user", Result::class.java)
 
         user?.let {
-            val fullName = "${it.name.first} ${it.name.last}"
+            val fullName = "${it.name?.first} ${it.name?.last}"
             binding.fullNameTextView.text = fullName
 
             val address =
-                "${it.location.street.number}, ${it.location.street.name}, ${it.location.city}, ${it.location.state}, ${it.location.country}"
+                "${it.location?.street?.number}, ${it.location?.street?.name}, ${it.location?.city}, ${it.location?.state}, ${it.location?.country}"
             binding.addressTextView.text = address
 
             binding.phoneTextView.text = it.phone
 
             Glide.with(this)
-                .load(it.picture.large)
+                .load(it.picture?.large)
                 .transform(CircleCrop())
                 .into(binding.profileImageView)
         }

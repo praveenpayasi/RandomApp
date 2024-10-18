@@ -5,6 +5,6 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Street(
-    val name: String,
-    val number: Int
+    val name: String?,
+    val number: Int?
 ) : Parcelable
