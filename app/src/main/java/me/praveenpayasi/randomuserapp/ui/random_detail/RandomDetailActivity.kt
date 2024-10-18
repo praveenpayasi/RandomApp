@@ -16,7 +16,15 @@ class RandomDetailActivity : AppCompatActivity() {
         binding = ActivityUserDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        binding.toolbar.setNavigationOnClickListener {
+            finish()
+        }
+
         val user = intent.getParcelableExtra<Result>("user")
+        //val user: Result? = intent.getParcelableExtra("user", Result::class.java)
 
         user?.let {
             val fullName = "${it.name.first} ${it.name.last}"
