@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "me.praveenpayasi.randomuserapp"
@@ -51,6 +51,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
     implementation "com.google.dagger:dagger:2.42"
+    implementation 'androidx.paging:paging-common-android:3.3.2'
+    implementation 'androidx.paging:paging-runtime-ktx:3.3.2'
     kapt "com.google.dagger:dagger-compiler:2.42"
     implementation 'androidx.browser:browser:1.4.0'
 
