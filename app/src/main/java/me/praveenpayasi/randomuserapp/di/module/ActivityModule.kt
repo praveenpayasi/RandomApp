@@ -10,6 +10,9 @@ import me.praveenpayasi.randomuserapp.di.ActivityContext
 import me.praveenpayasi.randomuserapp.ui.base.ViewModelProviderFactory
 import me.praveenpayasi.randomuserapp.ui.random.RandomUserPaginationAdapter
 import me.praveenpayasi.randomuserapp.ui.random.RandomUserViewModel
+import me.praveenpayasi.randomuserapp.utils.DispatcherProvider
+import me.praveenpayasi.randomuserapp.utils.NetworkHelper
+import me.praveenpayasi.randomuserapp.utils.logger.Logger
 
 @Module
 class ActivityModule(private val activity: AppCompatActivity) {
@@ -21,10 +24,15 @@ class ActivityModule(private val activity: AppCompatActivity) {
     }
 
     @Provides
-    fun provideRandomUserViewModel(randomUserRepository: RandomUserRepository): RandomUserViewModel {
+    fun provideRandomUserViewModel(
+        randomUserRepository: RandomUserRepository,
+        networkHelper: NetworkHelper,
+        dispatcherProvider: DispatcherProvider,
+        logger: Logger
+    ): RandomUserViewModel {
         return ViewModelProvider(activity,
             ViewModelProviderFactory(RandomUserViewModel::class) {
-                RandomUserViewModel(randomUserRepository)
+                RandomUserViewModel(randomUserRepository, networkHelper, dispatcherProvider, logger)
             })[RandomUserViewModel::class.java]
     }
 
